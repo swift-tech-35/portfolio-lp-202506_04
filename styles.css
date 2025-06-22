@@ -177,7 +177,7 @@ body {
   margin-left: 0;
   transform: none;
   box-sizing: border-box;
-  margin-bottom: 2em; /* 下に余白 */
+  margin-bottom: 2em;
 }
 .info-card {
   background: var(--white);
@@ -206,8 +206,8 @@ body {
   margin-left: 0;
   transform: none;
   box-sizing: border-box;
-  margin-top: 2.5em;   /* 上に大きめ余白 */
-  margin-bottom: 3em;  /* 下も少し余白 */
+  margin-top: 2.5em;
+  margin-bottom: 3em;
 }
 .service-card {
   background: var(--white);
@@ -304,6 +304,12 @@ body {
 .faq-list .answer { margin-top: 0.4em; color: #444; }
 
 /* --- CTA --- */
+.cta-section {
+  width: 100%;
+  background: none;
+  margin: 0;
+  padding: 0;
+}
 .cta {
   background: var(--primary);
   color: var(--white);
@@ -314,6 +320,9 @@ body {
   box-shadow: var(--shadow);
   opacity: 0;
   transform: translateY(20px);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 .cta h2 {
   font-family: 'Noto Serif JP', serif;
