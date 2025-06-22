@@ -161,7 +161,7 @@ body {
   margin-bottom: 1.2em;
 }
 
-/* --- お知らせ（中央寄せ）--- */
+/* --- お知らせ --- */
 .information { margin-top: 3em; }
 .information h2 {
   font-family: 'Noto Serif JP', serif;
@@ -173,10 +173,11 @@ body {
   justify-content: center;
   gap: 1.5em;
   flex-wrap: wrap;
-  width: 100vw;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  margin-left: 0;
+  transform: none;
   box-sizing: border-box;
+  margin-bottom: 2em; /* 下に余白 */
 }
 .info-card {
   background: var(--white);
@@ -195,16 +196,18 @@ body {
   font-weight: bold;
 }
 
-/* --- 3カラムサービス（中央寄せ）--- */
+/* --- 3カラムサービス --- */
 .service-3col {
   display: flex;
   justify-content: center;
   gap: 2em;
   flex-wrap: wrap;
-  width: 100vw;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  margin-left: 0;
+  transform: none;
   box-sizing: border-box;
+  margin-top: 2.5em;   /* 上に大きめ余白 */
+  margin-bottom: 3em;  /* 下も少し余白 */
 }
 .service-card {
   background: var(--white);
@@ -237,7 +240,7 @@ body {
   font-size: 1.25em;
 }
 
-/* --- コラム（中央寄せ）--- */
+/* --- コラム --- */
 .column h2, .faq h2, .section-title {
   font-family: 'Noto Serif JP', serif;
   font-size: 2rem;
@@ -250,9 +253,9 @@ body {
   justify-content: center;
   gap: 1.5em;
   flex-wrap: wrap;
-  width: 100vw;
-  margin-left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  margin-left: 0;
+  transform: none;
   box-sizing: border-box;
 }
 .column-card {
@@ -323,7 +326,7 @@ body {
   font-weight: bold;
 }
 
-/* --- フッター（中央寄せ）--- */
+/* --- フッター --- */
 .footer {
   background: var(--primary);
   color: var(--white);
