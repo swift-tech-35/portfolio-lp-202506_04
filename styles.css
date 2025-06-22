@@ -173,6 +173,7 @@ body {
   display: flex;
   gap: 1.5em;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .info-card {
   background: var(--white);
@@ -180,7 +181,9 @@ body {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   min-width: 240px;
-  flex: 1;
+  flex: 0 1 340px;
+  max-width: 340px;
+  margin: 0 0.5em;
   opacity: 0;
 }
 .info-card .date {
@@ -192,19 +195,24 @@ body {
 /* --- 3カラムサービス --- */
 .service-3col {
   display: flex;
+  justify-content: center; /* 横中央寄せ */
   gap: 2em;
   margin: 4em 0 3em 0;
+  flex-wrap: wrap;
 }
 .service-card {
   background: var(--white);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  flex: 1;
+  flex: 0 1 340px; /* カード幅 */
+  max-width: 340px;
+  min-width: 260px;
+  margin: 0 0.5em;
   padding: 1.2em 1em 1.8em 1em;
   text-align: center;
   transform: scale(0.95);
   opacity: 0;
-  transition: transform .2s cubic-bezier(.18,.89,.32,1.28), box-shadow .22s;
+  transition: transform .22s cubic-bezier(.18,.89,.32,1.28), box-shadow .22s;
 }
 .service-card img {
   width: 100%;
@@ -235,16 +243,18 @@ body {
   display: flex;
   gap: 1.5em;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .column-card {
   background: var(--white);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 1em;
-  flex: 1 1 260px;
+  flex: 0 1 340px;
   min-width: 220px;
   max-width: 340px;
   text-align: left;
+  margin: 0 0.5em;
   transition: transform .2s;
   opacity: 0;
   transform: rotateX(4deg) translateY(40px);
@@ -313,14 +323,14 @@ body {
 }
 .footer .container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  gap: 1em;
   max-width: 900px;
 }
 .footer a.btn-primary {
-  background: var(--accent);
-  color: var(--primary)!important;
-  margin-left: 1em;
+  margin-left: 0;
+  margin-top: 0.5em;
 }
 
 /* --- ページトップボタン --- */
@@ -347,10 +357,16 @@ body {
   .service-3col, .column-cards {
     flex-direction: column;
     gap: 1.3em;
+    align-items: center;
   }
   .footer .container {
     flex-direction: column;
     gap: 0.8em;
+    align-items: center;
+  }
+  .info-cards {
+    flex-direction: column;
+    align-items: center;
   }
 }
 @media (max-width: 700px) {
