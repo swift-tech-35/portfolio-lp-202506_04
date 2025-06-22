@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1280, initial-scale=1" />
+  <title>Example Housing Inc. | 住みたくなる街 NADA / ROKKO</title>
+  <meta name="description" content="架空の不動産会社ポートフォリオサイトのダミー。大和住宅を徹底再現。" />
+  <meta property="og:title" content="Example Housing Inc." />
+  <meta property="og:description" content="架空の不動産会社ダミーサイト。大和住宅を徹底再現。" />
+  <meta property="og:image" content="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container">
+      <div class="logo">Example Housing Inc.</div>
+      <nav class="nav">
+        <a href="#" class="nav-link">About</a>
+        <a href="#" class="nav-link">Management</a>
+        <a href="#" class="nav-link">Property</a>
+        <a href="#" class="nav-link">Area</a>
+        <a href="#" class="nav-link">Column</a>
+        <a href="#" class="nav-link">FAQ</a>
+        <a href="#" class="btn-primary">お問い合わせ</a>
+      </nav>
+      <div class="burger" id="burger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#">About</a>
+      <a href="#">Management</a>
+      <a href="#">Property</a>
+      <a href="#">Area</a>
+      <a href="#">Column</a>
+      <a href="#">FAQ</a>
+      <a href="#" class="btn-primary">お問い合わせ</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-bg" id="heroBg"></div>
+      <div class="hero-content">
+        <h1>
+          <span class="hero-title" data-anim="fade-stagger">住みたくなる街</span>
+          <span class="hero-title hero-title-accent" data-anim="fade-stagger">NADA / ROKKO</span>
+        </h1>
+        <p class="hero-sub" data-anim="fade-stagger">管理・賃貸・売買なら Example Housing Inc.</p>
+        <a href="#" class="btn-primary" data-anim="fade-stagger">お問い合わせはこちら</a>
+      </div>
+    </section>
+
+    <!-- Information -->
+    <section class="information container">
+      <h2 class="section-title" data-anim="fade-up">お知らせ</h2>
+      <div class="info-cards">
+        <div class="info-card" data-anim="fade-up-stagger">
+          <span class="date">2024/10/02</span>
+          <p>【新着】管理物件を追加しました。</p>
+        </div>
+        <div class="info-card" data-anim="fade-up-stagger">
+          <span class="date">2024/09/28</span>
+          <p>秋のご入居キャンペーン開催中！</p>
+        </div>
+        <div class="info-card" data-anim="fade-up-stagger">
+          <span class="date">2024/09/15</span>
+          <p>サイトをリニューアルしました。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Three Column Section -->
+    <section class="service-3col container">
+      <div class="service-card" data-anim="scale-in">
+        <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg" alt="管理委託">
+        <h3>委託管理</h3>
+        <p>賃貸管理業務はすべてお任せ。安心のトータルサポート。</p>
+      </div>
+      <div class="service-card" data-anim="scale-in">
+        <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg" alt="物件情報">
+        <h3>物件情報</h3>
+        <p>人気物件を多数掲載。こだわり条件で検索も簡単！</p>
+      </div>
+      <div class="service-card" data-anim="scale-in">
+        <img src="https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg" alt="灘エリア紹介">
+        <h3>エリア紹介</h3>
+        <p>灘・六甲の魅力を地元目線でご紹介します。</p>
+      </div>
+    </section>
+
+    <!-- Column -->
+    <section class="column container">
+      <h2 class="section-title" data-anim="fade-up">最新コラム</h2>
+      <div class="column-cards">
+        <div class="column-card" data-anim="fade-rotate">
+          <img src="https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg" alt="コラム1">
+          <h4>賃貸管理のポイント</h4>
+          <p>失敗しない物件選び・管理の秘訣とは？</p>
+        </div>
+        <div class="column-card" data-anim="fade-rotate">
+          <img src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg" alt="コラム2">
+          <h4>エリアレポート</h4>
+          <p>灘・六甲の住みやすさ徹底分析</p>
+        </div>
+        <div class="column-card" data-anim="fade-rotate">
+          <img src="https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg" alt="コラム3">
+          <h4>入居までの流れ</h4>
+          <p>お申込みからご入居までのステップを解説</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq container">
+      <h2 class="section-title" data-anim="fade-up">よくあるご質問</h2>
+      <div class="faq-list">
+        <details data-anim="fade-rotate">
+          <summary>Q. 管理委託の手数料はいくら？</summary>
+          <div class="answer">A. 月額賃料の5%〜を基本としております。物件や条件により異なります。</div>
+        </details>
+        <details data-anim="fade-rotate">
+          <summary>Q. 途中解約は可能ですか？</summary>
+          <div class="answer">A. 事前のご相談により、柔軟に対応しております。</div>
+        </details>
+        <details data-anim="fade-rotate">
+          <summary>Q. 空室対策はどのようなことをしていますか？</summary>
+          <div class="answer">A. 定期的な清掃・プロモーション・内装リフォーム等を実施しています。</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta container" data-anim="fade-up-cta">
+      <h2>まずはお気軽にご相談ください</h2>
+      <a href="#" class="btn-primary">お問い合わせフォームへ</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2024 Example Housing Inc.</p>
+      <a href="#" class="btn-primary">お問い合わせ</a>
+    </div>
+    <button class="to-top" id="toTop" aria-label="ページトップへ">↑</button>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
