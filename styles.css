@@ -1,0 +1,362 @@
+:root {
+  --primary: #0A1A2D;
+  --accent: #C0AA5F;
+  --bg: #F5F7FA;
+  --white: #fff;
+  --radius: 1.5rem;
+  --shadow: 0 6px 32px 0 rgba(10,26,45,0.10);
+}
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--primary);
+  font-family: 'Noto Sans JP', 'Arial', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.container {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* --- ヘッダー --- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.8);
+  box-shadow: var(--shadow);
+  transition: background 0.35s cubic-bezier(0.25,0.8,0.5,1), border-bottom 0.35s;
+  border-bottom: 2px solid transparent;
+}
+.header.scrolled {
+  background: var(--white);
+  border-bottom: 2px solid var(--accent);
+}
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.logo {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.6rem;
+  color: var(--primary);
+  font-weight: bold;
+}
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.nav a {
+  color: var(--primary);
+  text-decoration: none;
+  position: relative;
+  font-weight: 500;
+  padding-bottom: 3px;
+  transition: color .3s;
+}
+.nav-link::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 0; height: 2px;
+  background: var(--accent);
+  transition: width .25s cubic-bezier(0.25,0.8,0.5,1);
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+.btn-primary {
+  background: var(--primary);
+  color: var(--white)!important;
+  padding: 0.5em 1.5em;
+  border-radius: var(--radius);
+  font-weight: bold;
+  border: none;
+  transition: background .2s;
+  box-shadow: 0 2px 12px rgba(10,26,45,0.08);
+}
+.btn-primary:hover {
+  background: var(--accent);
+  color: var(--primary)!important;
+}
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+.burger span {
+  width: 24px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+/* --- モバイルメニュー --- */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(250, 250, 255, 0.96);
+  backdrop-filter: blur(6px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  z-index: 1100;
+}
+.mobile-menu a {
+  font-size: 1.4rem;
+}
+
+/* --- ヒーロー --- */
+.hero {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-bg {
+  background-image: url('https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.55);
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  z-index: 0;
+  transition: transform .5s cubic-bezier(.77,0,.18,1);
+  will-change: transform;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: var(--white);
+  text-align: center;
+  padding: 2rem;
+}
+.hero-content h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 2.6rem;
+  margin-bottom: 0.4em;
+  letter-spacing: .05em;
+}
+.hero-title-accent {
+  color: var(--accent);
+  font-size: 1.2em;
+  display: inline-block;
+}
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.2em;
+}
+
+/* --- お知らせ --- */
+.information { margin-top: 3em; }
+.information h2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 2rem;
+  margin-bottom: 1em;
+}
+.info-cards {
+  display: flex;
+  gap: 1.5em;
+  flex-wrap: wrap;
+}
+.info-card {
+  background: var(--white);
+  padding: 1em 1.5em;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  min-width: 240px;
+  flex: 1;
+  opacity: 0;
+}
+.info-card .date {
+  font-size: .95em;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* --- 3カラムサービス --- */
+.service-3col {
+  display: flex;
+  gap: 2em;
+  margin: 4em 0 3em 0;
+}
+.service-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  flex: 1;
+  padding: 1.2em 1em 1.8em 1em;
+  text-align: center;
+  transform: scale(0.95);
+  opacity: 0;
+  transition: transform .2s cubic-bezier(.18,.89,.32,1.28), box-shadow .22s;
+}
+.service-card img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: var(--radius) var(--radius) 0 0;
+  margin-bottom: 0.8em;
+}
+.service-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 32px 0 rgba(192,170,95,0.14);
+}
+.service-card h3 {
+  margin: 0.3em 0;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.25em;
+}
+
+/* --- コラム --- */
+.column h2, .faq h2, .section-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 2rem;
+  margin-bottom: 1em;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.column-cards {
+  display: flex;
+  gap: 1.5em;
+  flex-wrap: wrap;
+}
+.column-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1em;
+  flex: 1 1 260px;
+  min-width: 220px;
+  max-width: 340px;
+  text-align: left;
+  transition: transform .2s;
+  opacity: 0;
+  transform: rotateX(4deg) translateY(40px);
+}
+.column-card img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: 0.7em;
+}
+.column-card h4 {
+  margin: 0.2em 0;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.08em;
+}
+
+/* --- FAQ --- */
+.faq-list details {
+  background: var(--white);
+  margin-bottom: 0.7em;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 0.8em 1.2em;
+  cursor: pointer;
+  opacity: 0;
+  transform: rotateX(4deg) translateY(40px);
+}
+.faq-list summary {
+  font-weight: bold;
+  color: var(--primary);
+  outline: none;
+}
+.faq-list .answer { margin-top: 0.4em; color: #444; }
+
+/* --- CTA --- */
+.cta {
+  background: var(--primary);
+  color: var(--white);
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 3em 0 1.5em 0;
+  padding: 2em 1em;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transform: translateY(20px);
+}
+.cta h2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+.cta .btn-primary {
+  background: var(--accent);
+  color: var(--primary)!important;
+  font-weight: bold;
+}
+
+/* --- フッター --- */
+.footer {
+  background: var(--primary);
+  color: var(--white);
+  padding: 2em 0 1.5em 0;
+  text-align: center;
+  position: relative;
+}
+.footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 900px;
+}
+.footer a.btn-primary {
+  background: var(--accent);
+  color: var(--primary)!important;
+  margin-left: 1em;
+}
+
+/* --- ページトップボタン --- */
+.to-top {
+  position: fixed;
+  bottom: 30px; right: 32px;
+  background: var(--accent);
+  color: var(--primary);
+  border: none;
+  border-radius: 50%;
+  width: 48px; height: 48px;
+  font-size: 1.8em;
+  box-shadow: 0 2px 16px rgba(0,0,0,.12);
+  cursor: pointer;
+  display: none;
+  z-index: 2000;
+  transition: background .18s, transform 0.12s cubic-bezier(0.25,0.8,0.5,1);
+}
+.to-top.show { display: block; opacity: 1; transform: translateY(0);}
+.to-top.hide { opacity: 0; transform: translateY(20px);}
+.to-top:hover { background: var(--primary); color: var(--white); transform: scale(1.1); }
+
+@media (max-width: 900px) {
+  .service-3col, .column-cards {
+    flex-direction: column;
+    gap: 1.3em;
+  }
+  .footer .container {
+    flex-direction: column;
+    gap: 0.8em;
+  }
+}
+@media (max-width: 700px) {
+  .header .container { height: 52px; }
+  .nav { display: none; }
+  .burger { display: flex; }
+  .hero { height: 250px; }
+  .information, .column, .faq, .cta { padding: 0 2vw; }
+}
